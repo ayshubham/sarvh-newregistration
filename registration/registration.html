@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="./registration.css" />
+    <!-- <link rel="stylesheet" href="./registration.css" /> -->
+
+    <meta name="theme-color" content="#FFEF78" />
+
+    <meta
+      name="theme-color"
+      content="#FFEF78"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#FFEF78"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta name="theme-color" content="#FFEF78" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FFEF78" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFEF78" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFEF78" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="error_div">
+      <div onclick="close_error()" class="error_bg"></div>
+      <div class="error_cont">
+        <img src="../assets/img/warning_icon.svg" />
+        <p id="error_msg" style="margin-top: 10px;">
+          Testing message which is gonna be very long so better leave a huge
+          amount of space.
+        </p>
+        <button onclick="close_error()" class="button-9" role="button">
+          OK
+        </button>
+      </div>
+    </div>
+    <div class="success_div">
+      <div onclick="close_success()" class="error_bg"></div>
+      <div class="error_cont">
+        <div class="btn_cont">
+          <button
+            onclick="close_success()"
+            class="width button-9"
+            role="button"
+          >
+            Cancel
+          </button>
+          <button onclick="submit()" class="width button-9" role="button">
+            <span>Submit</span>
+            <div class="success">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                viewBox="0 0 29.756 29.756"
+                style="enable-background: new 0 0 29.756 29.756"
+                xml:space="preserve"
+              >
+                <path
+                  d="M29.049,5.009L28.19,4.151c-0.943-0.945-2.488-0.945-3.434,0L10.172,18.737l-5.175-5.173   c-0.943-0.944-2.489-0.944-3.432,0.001l-0.858,0.857c-0.943,0.944-0.943,2.489,0,3.433l7.744,7.752   c0.944,0.943,2.489,0.943,3.433,0L29.049,8.442C29.991,7.498,29.991,5.953,29.049,5.009z"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <!-- <img src="../assets/img/success.svg" /> -->
+        <!-- <p id="succes_msg">
+          Please recheck all your details. click cancel to recheck details or
+          submit to submit the form
+        </p> -->
+        
+      </div>
+    </div>
+    <div class="main">
+      <div class="logo">
+        <!-- <img src="../assets/img/CURVED.png" style="width: auto; height: auto; max-width: 60px; border-radius: 8px;"> -->
+        <img
+          src="../registration/pre-registration/assets/images/Group 2-5.svg"
+          style="width: auto; height: auto; max-width: 150px"
+        />
+      </div>
+
+      <form id="form">
+        <div class="secondary">
+          <div class="container" style="height: fit-content">
+            <div class="title">Seller information</div>
+
+            <div class="content">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Full Name</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    name="fullname"
+                    id="fullname"
+                  />
+                </div>
+                <!-- <div class="input-box">
+                  <span class="details">Pan Number</span>
+                  <input
+                    type="text"
+                    placeholder="Your Pan Number"
+                    maxlength="10"
+                    name="pancard"
+                    id="pancard"
+                  />
+                </div> -->
+                <div class="input-box">
+                  <span class="details">Email</span>
+                  <input
+                    type="text"
+                    placeholder="Business Email Address"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input
+                    type="text"
+                    placeholder="Your Phone Address"
+                    maxlength="10"
+                    name="phonenumber"
+                    id="phonenumber"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">Your Address</span>
+                  <input
+                    type="text"
+                    placeholder="Your Address"
+                    name="youraddress"
+                    id="youraddress"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">Your Pincode</span>
+                  <input
+                    type="text"
+                    placeholder="Your Pincode"
+                    maxlength="6"
+                    name="yourpincode"
+                    id="yourpincode"
+                  />
+                </div>
+
+                <!-- <div class="file-input">
+                  <input
+                    type="file"
+                    name="adharfile"
+                    id="adharfile"
+                    class="file-input__input"
+                    accept="image/png, image/jpeg, image/jpg, application/pdf"
+                  />
+                  <label class="file-input__label" for="adharfile">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="upload"
+                      class="svg-inline--fa fa-upload fa-w-16"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                      ></path>
+                    </svg>
+                    <span>Upload Your Adhar Card </span></label
+                  >
+                </div> -->
+
+                <!-- <div class="file-input">
+                  <input
+                    type="file"
+                    name="pancardfile"
+                    id="pancardfile"
+                    class="file-input__input"
+                    accept="image/png, image/jpeg, image/jpg, application/pdf"
+                  />
+                  <label class="file-input__label" for="pancardfile">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="upload"
+                      class="svg-inline--fa fa-upload fa-w-16"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                      ></path>
+                    </svg>
+                    <span>Upload Your Pan Card </span></label
+                  >
+                </div> -->
+              </div>
+              <div class="button">
+                <input
+                  value="Next"
+                  type="button"
+                  id="btn2"
+                  onclick="next1(event)"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!--   here is new one -->
+
+          <div class="container" style="height: fit-content">
+            <div class="title">Shop Information</div>
+
+            <div class="content">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Shop Name</span>
+                  <input
+                    type="text"
+                    placeholder="Enter Shop"
+                    name="shopname"
+                    id="shopname"
+                  />
+                </div>
+                <div class="input-box">
+                  <div style="display: flex; flex-direction: row; gap: 2px">
+                    <span class="details">Company Pan</span>
+                    <div class="tooltip" style="cursor: help">
+                      ⓘ
+                      <span class="tooltiptext"
+                        >If you are proprietorship then enter your pancard
+                        number</span
+                      >
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Company Pan Number"
+                    maxlength="10"
+                    name="companypannumber"
+                    id="companypannumber"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Shop Email</span>
+                  <input
+                    type="text"
+                    placeholder="Shop Email Address"
+                    name="shopemail"
+                    id="shopemail"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input
+                    type="text"
+                    placeholder="Shop Phone Number"
+                    maxlength="10"
+                    name="shopphonenumber"
+                    id="shopphonenumber"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">Shop Address</span>
+                  <input
+                    type="text"
+                    placeholder="Shop Address"
+                    name="shopaddress"
+                    id="shopaddress"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">Shop Pincode</span>
+                  <input
+                    type="text"
+                    placeholder="Shop Address"
+                    maxlength="6"
+                    name="shoppincode"
+                    id="shoppincode"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">GSTIN</span>
+                  <input
+                    type="text"
+                    placeholder="GST NUMBER"
+                    maxlength="15"
+                    name="gstin"
+                    id="gstin"
+                  />
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                "
+              >
+                <div class="button" style="width: 40%; margin: 0">
+                  <input
+                    value="Back"
+                    type="button"
+                    id="btnback"
+                    onclick="next2Back(event)"
+                  />
+                </div>
+
+
+                <div class="button" style="width: 40%; margin: 0">
+                  <input
+                    value="Next"
+                    type="button"
+                    id="btn2"
+                    onclick="next2(event)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!--   here is new one -->
+          </div>
+
+          <div class="container" style="height: fit-content; box-shadow: none">
+            <div class="title">Bank Account (Optional)</div>
+
+            <div class="content">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Bank Name</span>
+                  <input
+                    type="text"
+                    placeholder="Bank Name"
+                    name="bankname"
+                    id="bankname"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Account Number</span>
+                  <input
+                    type="text"
+                    placeholder="Your Account Number"
+                    name="accountnumber"
+                    id="accountnumber"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">IFSC</span>
+                  <input
+                    type="text"
+                    placeholder="IFSC Code"
+                    name="ifsc"
+                    id="ifsc"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">Bank Branch</span>
+                  <input
+                    type="text"
+                    placeholder="Bank Branch"
+                    name="bankbranch"
+                    id="bankbranch"
+                  />
+                </div>
+
+                <div class="input-box">
+                  <span class="details">Account type</span>
+
+                  <select class="minimal" name="accounttype" id="accounttype">
+                    <option>Current</option>
+                    <option>Savings</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form_cont">
+              <input type="checkbox" name="terms" />
+              <p>
+                Please read and agree to the
+                <a
+                  href="/registration/form/terms"
+                  onclick="window.open('/registration/form/terms','popup','width=600,height=600'); return false;"
+                  >terms & conditions</a
+                >
+                before submitting
+              </p>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <div class="button" style="width: 40%; margin: 0">
+                <input
+                  value="Back"
+                  type="button"
+                  id="btnback"
+                  onclick="next3Back(event)"
+                />
+              </div>
+
+              <div class="button" style="width: 40%; margin: 0">
+                <input
+                  value="Submit"
+                  type="submit"
+                  id="submitBtn"
+                  value="Submit"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- </div>
+              <div class="button">
+                <input
+                  value="Back"
+                  type="button"
+                  id="btnback"
+                  onclick="next3Back(event)"
+                />
+              </div> -->
+        <!-- <input
+          type="submit"
+          value="Register"
+          style="background-color: black; color: white; border: black 1px solid;"
+        /> -->
+      </form>
+    </div>
+    <script src="./registration.js"></script>
+    <!-- <script src="./registration.js"></script> -->
+  </body>
+</html>
