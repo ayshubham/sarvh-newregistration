@@ -49,7 +49,8 @@ document.querySelector("#submitBtn").addEventListener("click", async (e) => {
   e.preventDefault();
 
   let formdata = new FormData(document.getElementById("form"));
-  let requesturl = "https://sarvhreg.onrender.com/api/form";
+  let requesturl =
+    "http://ec2-65-0-185-72.ap-south-1.compute.amazonaws.com/api/form";
   // let requesturl="http://localhost:8000/api/form";
   response = await fetch(requesturl, {
     body: formdata,
@@ -76,7 +77,8 @@ async function submit() {
   document.querySelectorAll(".width")[1].classList.add("is_active");
   document.querySelectorAll(".width")[1].style.pointerEvents = "none";
   let formdata = new FormData(document.getElementById("form"));
-  let requesturl = "https://sarvhreg.onrender.com/api/form/submit";
+  let requesturl =
+    "http://ec2-65-0-185-72.ap-south-1.compute.amazonaws.com/api/form/submit";
   // let requesturl="http://localhost:8000/api/form/submit";
   response = await fetch(requesturl, {
     body: formdata,
