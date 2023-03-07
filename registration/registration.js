@@ -51,7 +51,7 @@ document.querySelector("#submitBtn").addEventListener("click", async (e) => {
   e.preventDefault();
 
   let formdata = new FormData(document.getElementById("form"));
-  let requesturl = "https://sarvhreg.onrender.com/api/form";
+  let requesturl = "https://hungry-pink-octopus.cyclic.app/api/form";
 
   // let requesturl="http://localhost:8000/api/form";
 
@@ -85,7 +85,7 @@ async function submit() {
   document.querySelectorAll(".width")[1].classList.add("is_active");
   document.querySelectorAll(".width")[1].style.pointerEvents = "none";
   let formdata = new FormData(document.getElementById("form"));
-  let requesturl = "https://sarvhreg.onrender.com/api/form/submit";
+  let requesturl = "https://hungry-pink-octopus.cyclic.app/api/form/submit";
 
   // let requesturl="http://localhost:8000/api/form/submit";
   response = await fetch(requesturl, {
